@@ -4,12 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Форма</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="wrapper">
     <form class="form" action="/" method="POST" onsubmit="return calculator()">
+      <!--
       <input id="type" class="form__input" type="text" placeholder="Тип жилья" required>
+      -->
+
+
+      <div class="calc_type">
+        <label class="calc_type_wrapper">
+          <input checked class="calc_type_radio" for="calc-form" name="calc-type" type="radio" value="novostroika">
+          <div class="calc_type_item">
+            <img class="calc_type_item_img" src="https://www.prorabneva.ru/frontend/images/icon_calc_1.png" alt="Калькулятор - Прораб Нева">
+            <span class="calc_type_item_name">Новостройка</span>
+          </div>
+        </label>
+        <label class="calc_type_wrapper">
+          <input class="calc_type_radio" for="calc-form" name="calc-type" type="radio" value="vtorichka">
+          <div class="calc_type_item">
+            <img class="calc_type_item_img" src="https://www.prorabneva.ru/frontend/images/icon_calc_2.png"
+                alt="Калькулятор - Прораб Нева">
+            <span class="calc_type_item_name">Вторичное жилье</span>
+          </div>
+        </label>
+      </div>
       <input id="area" class="form__input" type="text" placeholder="Площадь (кв.м.)" required>
       <input id="rooms" class="form__input" type="text" placeholder="Количество комнат" required>
       <input id="crash" class="form__input" type="text" placeholder="Демонтаж" required>
