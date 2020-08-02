@@ -14,23 +14,15 @@ const santechCheckbox = document.querySelector(".calc_check_santech");
 function calculator() {  
   let price;
 
-  let S = 24;
-  let type = 0;
-  let rooms = 1;
-  let crash = 1;
-  let wall = 1;
-  let electric = 1; 
-  let santech = 1;
+  let type = typeCheck() === "novostroika" ? 0 : 1;
 
-  type = typeCheck() === "novostroika" ? 0 : 1;
+  let S = Number(document.querySelector(".calc_area").value);
+  let rooms = Number(document.querySelector(".calc_rooms").value);
 
-  S = Number(document.getElementById("area").value);
-  rooms = Number(document.getElementById("rooms").value);
-
-  crash = crashCheck() ? 1 : 0;
-  wall = wallCheck() ? 1 : 0;
-  electric = electricCheck() ? 1 : 0;
-  santech = santechCheck() ? 1 : 0;
+  let crash = crashCheck() ? 1 : 0;
+  let wall = wallCheck() ? 1 : 0;
+  let electric = electricCheck() ? 1 : 0;
+  let santech = santechCheck() ? 1 : 0;
 
   console.log("Тип жилья: ", type === 0 ? "Новостройка" : "Вторичка");
   console.log("Площадь: ", S);
@@ -42,7 +34,11 @@ function calculator() {
 
   price = Math.round(-48430.678584 + S * 5922.553251 + type * 27954.081042 + rooms * (7137.458947) + crash * (-27954.081042) + wall * 22495.783679 + electric * 13591.964593 + santech * 1603.015233);
 
-  document.querySelector(".price").innerHTML = price + " руб.";
+  if (String(price).length === 6) {
+    document.querySelector(".price").innerHTML = String(price).substring(0, 3) + " " + String(price).substring(3) + " руб.";
+  } else if (String(price).length === 5) {
+    document.querySelector(".price").innerHTML = String(price).substring(0, 2) + " " + String(price).substring(2) + " руб.";
+  }
 };
 
 function typeCheck() {
@@ -76,6 +72,42 @@ function santechCheck() {
     return santechCheckbox.checked;
   }
 }
+
+function decreaseArea() {
+  if (document.querySelector(".calc_area").value >= 16) {
+    document.querySelector(".calc_area").value--;
+    calculator();
+  }
+}
+
+function increaseArea() {
+  if (document.querySelector(".calc_area").value <= 199) {
+    document.querySelector(".calc_area").value++;
+    calculator();
+  }
+}
+
+function decreaseRooms() {
+  if (document.querySelector(".calc_rooms").value >= 2) {
+    document.querySelector(".calc_rooms").value--;
+    calculator();
+  }
+}
+
+function increaseRooms() {
+  if (document.querySelector(".calc_rooms").value <= 6) {
+    document.querySelector(".calc_rooms").value++;
+    calculator();
+  }
+}
+
+document.querySelector(".calc_area_minus").addEventListener("click", decreaseArea);
+
+document.querySelector(".calc_area_plus").addEventListener("click", increaseArea);
+
+document.querySelector(".calc_rooms_minus").addEventListener("click", decreaseRooms);
+
+document.querySelector(".calc_rooms_plus").addEventListener("click", increaseRooms);
 
 form.addEventListener("change", calculator);
 
