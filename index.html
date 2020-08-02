@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор ремонта</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <form class="form" action="/"">
+      <!--
+      <input id="type" class="form__input" type="text" placeholder="Тип жилья" required>
+      -->
+
+
+      <div class="calc_type">
+        <label class="calc_type_wrapper">
+          <input checked class="calc_type_radio calc_check_type" for="calc-form" name="calc-type" type="radio" value="novostroika">
+          <div class="calc_type_item">
+            <img class="calc_type_item_img" src="https://www.prorabneva.ru/frontend/images/icon_calc_1.png" alt="Калькулятор - Прораб Нева">
+            <span class="calc_type_item_name">Новостройка</span>
+          </div>
+        </label>
+        <label class="calc_type_wrapper">
+          <input class="calc_type_radio calc_check_type" for="calc-form" name="calc-type" type="radio" value="vtorichka">
+          <div class="calc_type_item">
+            <img class="calc_type_item_img" src="https://www.prorabneva.ru/frontend/images/icon_calc_2.png"
+                alt="Калькулятор - Прораб Нева">
+            <span class="calc_type_item_name">Вторичное жилье</span>
+          </div>
+        </label>
+      </div>
+
+
+      <input id="area" class="form__input" type="text" placeholder="Площадь (кв.м.)" required>
+      <input id="rooms" class="form__input" type="text" placeholder="Количество комнат" required>
+
+      <!--
+      <input id="crash" class="form__input" type="text" placeholder="Демонтаж" required>
+      <input id="wall" class="form__input" type="text" placeholder="Выравнивание стен" required>
+      <input id="electric" class="form__input" type="text" placeholder="Электромонтажные работы" required>
+      <input id="santech" class="form__input" type="text" placeholder="Сантехнические работы" required>
+      -->
+
+      <div class='calc_service'>
+        <label class='calc_service_wrapper'>
+          <input class='calc_type_radio calc_check_crash' for='calc-form' name='calc-service1' type='checkbox'>
+            <div class='calc_type_item'>
+              <img class='calc_type_item_img' src='https://www.prorabneva.ru/frontend/images/label_icon_1.png'  alt='Калькулятор - Прораб Нева'>
+              <span class='calc_type_item_name'>Демонтаж</span>
+            </div>
+        </label>
+        <label class='calc_service_wrapper'>
+          <input class='calc_type_radio calc_check_wall' for='calc-form' name='calc-service2' type='checkbox'>
+          <div class='calc_type_item'>
+            <img class='calc_type_item_img' src='https://www.prorabneva.ru/frontend/images/label_icon_2.png'  alt='Калькулятор - Прораб Нева'>
+            <span class='calc_type_item_name'>Выравнивание стен</span>
+          </div>
+        </label>
+        <label class='calc_service_wrapper'>
+          <input class='calc_type_radio calc_check_electric' for='calc-form' name='calc-service3' type='checkbox'>
+          <div class='calc_type_item'>
+            <img class='calc_type_item_img' src='https://www.prorabneva.ru/frontend/images/label_icon_3.png'  alt='Калькулятор - Прораб Нева'>
+            <span class='calc_type_item_name'>Электромонтажные работы</span>
+          </div>
+        </label>
+        <label class='calc_service_wrapper'>
+          <input class='calc_type_radio calc_check_santech' for='calc-form' name='calc-service4' type='checkbox'>
+          <div class='calc_type_item'>
+            <img class='calc_type_item_img' src='https://www.prorabneva.ru/frontend/images/label_icon_4.png'  alt='Калькулятор - Прораб Нева'>
+            <span class='calc_type_item_name'>Сантехнические работы</span>
+          </div>
+        </label>
+      </div>
+    </form>
+    <p>Примерная стоимость ремонта:</p>
+    <div class="price"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
