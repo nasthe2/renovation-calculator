@@ -11,8 +11,8 @@ form {
 }
 
 .calc_type,
-.calc_service,
-.calc_dops {
+.calc_numbers,
+.calc_service {
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -38,7 +38,7 @@ form {
 }
 
 .calc_type_radio:checked + .calc_type_item {
-  border: 3px solid #ff6400;
+  border: 3px solid #e8c29c;
 }
 
 .calc_type_radio:checked + .calc_type_item:after {
@@ -58,7 +58,7 @@ form {
 }
 
 .calc_type_item:hover {
-  border: 3px solid #1890ff;
+  border: 3px solid rgba(232, 194, 156, .5);
 }
 
 .calc_type_item:before {
@@ -69,6 +69,10 @@ form {
   width: 30px;
   height: 30px;
   border: 1px solid #bfbfbf;
+}
+
+.calc_numbers {
+  height: 120px;
 }
 
 .calc_square_head {
@@ -82,7 +86,7 @@ form {
 }
 
 .calc_square_toggler {
-  width: 700px;
+  width: 300px;
   margin-bottom: 30px;
 }
 

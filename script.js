@@ -32,7 +32,7 @@ function calculator() {
   console.log("Электромонтажные работы: ", electric);
   console.log("Сантехнические работы: ", santech);
 
-  price = Math.round(-48430.678584 + S * 5922.553251 + type * 27954.081042 + rooms * (7137.458947) + crash * (-27954.081042) + wall * 22495.783679 + electric * 13591.964593 + santech * 1603.015233);
+  price = Math.round(-68430.678584 + S * 4922.553251 + type * 27954.081042 + rooms * 7137.458947 + crash * 27954.081042 + wall * 22495.783679 + electric * (rooms > 2 ? 23591.964593 : 13591.964593) + santech * 5603.015233);
 
   if (String(price).length === 6) {
     document.querySelector(".price").innerHTML = String(price).substring(0, 3) + " " + String(price).substring(3) + " руб.";
