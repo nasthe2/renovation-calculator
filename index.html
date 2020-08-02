@@ -10,11 +10,6 @@
 <body>
   <div class="wrapper">
     <form class="form" action="/"">
-      <!--
-      <input id="type" class="form__input" type="text" placeholder="Тип жилья" required>
-      -->
-
-
       <div class="calc_type">
         <label class="calc_type_wrapper">
           <input checked class="calc_type_radio calc_check_type" for="calc-form" name="calc-type" type="radio" value="novostroika">
@@ -33,16 +28,25 @@
         </label>
       </div>
 
+      <div class='calc_square'>
+        <span class='calc_square_head'>Общая площадь (кв. м.)</span>
+        <div class='calc_square_toggler'>
+          <div class="calc_area_minus"><i class='calc_square_toggler_minus btn_minus'>-</i></div>
+          <input class='calc_square_toggler_val calc_area' data-max='200' data-min='15' for='calc-form' id='range_01' max='200' min='15' name='square' step='1' type='number' value='45'>
+          <div class="calc_area_plus"><i class='calc_square_toggler_plus btn_plus'>+</i></div>
+        </div>
+      </div>
 
-      <input id="area" class="form__input" type="text" placeholder="Площадь (кв.м.)" required>
-      <input id="rooms" class="form__input" type="text" placeholder="Количество комнат" required>
-
-      <!--
-      <input id="crash" class="form__input" type="text" placeholder="Демонтаж" required>
-      <input id="wall" class="form__input" type="text" placeholder="Выравнивание стен" required>
-      <input id="electric" class="form__input" type="text" placeholder="Электромонтажные работы" required>
-      <input id="santech" class="form__input" type="text" placeholder="Сантехнические работы" required>
-      -->
+      <div class='calc_dops'>
+        <div class='calc_square'>
+          <span class='calc_square_head'>Комнаты</span>
+          <div class='calc_square_toggler'>
+            <div class="calc_rooms_minus"><i class='calc_square_toggler_minus'>-</i></div>
+            <input class='calc_square_toggler_val calc_square_toggler_val_2 calc_rooms' for='calc-form' max='7' min='1' name='rooms' step='1' type='number' value='1'>
+            <div class="calc_rooms_plus"><i class='calc_square_toggler_plus'>+</i></div>
+          </div>
+        </div>
+      </div>
 
       <div class='calc_service'>
         <label class='calc_service_wrapper'>
@@ -75,9 +79,10 @@
         </label>
       </div>
     </form>
-    <p>Примерная стоимость ремонта:</p>
-    <div class="price"></div>
+    
   </div>
+  <p>ПРЕДВАРИТЕЛЬНЫЙ РАСЧЕТ</p>
+  <div class="price"></div>
 
   <script src="script.js"></script>
 </body>
